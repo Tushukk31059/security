@@ -14,7 +14,7 @@ const Home = () => {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:3002",
+        "${process.env.API_URL}",
         {},
         { withCredentials: true }
       );
