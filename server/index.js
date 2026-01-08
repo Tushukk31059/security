@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const authRoute = require("./Routes/AuthRoute");
 require("dotenv").config();
 const {MONGO_URL,PORT} = process.env;
-app.use(cors({ origin: ["http://localhost:3000"],
+app.use(cors({ origin: process.env.VERCEL_URL,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,}))
 app.use(cookieParser());
